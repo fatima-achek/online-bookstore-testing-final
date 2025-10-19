@@ -100,29 +100,72 @@ The goal is to learn through discovery and problem-solving. Use various testing 
 - **User Database**: In-memory user storage (for demo purposes)
 
 ### Project Structure
+````
+online-bookstore-testing-final/
+│
+├── .github/
+│   └── workflows/
+│       └── test.yml         # CI/CD pipeline configuration
+│
+├── tests/                   # Automated test suite
+│   ├── __init__.py
+│   ├── conftest.py          # Test fixtures and configuration
+│   ├── test_cart.py         # Cart functionality tests
+│   ├── test_performance.py  # Performance profiling tests
+│   └── test_edge_cases.py   # Edge case and boundary tests
+│
+├── templates/               # HTML templates
+├── static/                  # CSS, images, assets
+│
+├── app.py                   # Main Flask application
+├── models.py                # Data models
+├── requirements.txt         # Python dependencies
+│
+├── BUGS_FOUND.md           # Bug documentation
+├── CODE_IMPROVEMENTS.md    # Performance optimizations
+├── TRACEABILITY_MATRIX.md  # Test traceability
+│
+└── README.md               # This file
+````
+
+---
+
+### **Add this NEW section after "Responsive Design Testing" (around line 200):**
+````markdown
+## 🤖 Automated Testing Suite
+
+This project includes a comprehensive automated testing suite with CI/CD integration.
+
+### Test Coverage
+- **Total Tests**: 16 automated tests
+- **Code Coverage**: 70%
+- **Test Categories**:
+  - Functional Tests (4 tests)
+  - Performance Tests (5 tests)
+  - Edge Case Tests (7 tests)
+
+### Continuous Integration
+- **Platform**: GitHub Actions
+- **Automated Testing**: All tests run automatically on every push
+- **Coverage Reporting**: Automatic coverage report generation
+
+### Running Tests Locally
+```bash
+# Run all tests
+pytest tests/ -v
+
+# Run with coverage report
+pytest tests/ -v --cov=. --cov-report=html
+
+# Run specific test file
+pytest tests/test_cart.py -v
 ```
-online-bookstore-flask/
-│
-├── app.py                 # Main Flask application with all routes
-├── models.py             # Data models (Book, Cart, User, Order, etc.)
-├── requirements.txt      # Python dependencies
-├── README.md            # This comprehensive documentation
-│
-├── static/
-│   ├── styles.css       # Enhanced responsive styling
-│   ├── logo.png         # Store logo
-│   └── images/
-│       └── books/       # Book cover images
-│
-└── templates/
-    ├── index.html           # Home page with user navigation
-    ├── cart.html            # Shopping cart page
-    ├── checkout.html        # Enhanced checkout form
-    ├── order_confirmation.html  # Order confirmation page
-    ├── login.html           # User login page
-    ├── register.html        # User registration page
-    └── account.html         # User account management
-```
+
+### Test Documentation
+- See `BUGS_FOUND.md` for discovered bugs and fixes
+- See `CODE_IMPROVEMENTS.md` for performance optimizations
+- See `TRACEABILITY_MATRIX.md` for requirement-to-test mapping
+````
 
 ## 🧪 Testing Features
 
